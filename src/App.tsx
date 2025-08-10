@@ -7,19 +7,19 @@ function App() {
       {/* Header */}
       <header className="shadow-sm border-b border-gray-100" style={{backgroundColor: '#ffffff'}}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center py-6">
+          <div className="flex justify-between items-center py-4">
             <div className="flex items-center space-x-3">
               <img 
                 src="/PX3SolutionsRedWhite.png" 
                 alt="P3 Solutions Group Logo" 
-                className="w-20 h-20 object-contain drop-shadow-sm"
+                className="w-16 h-16 object-contain drop-shadow-sm"
               />
               <div>
                 <h1 className="text-2xl font-bold text-gray-900">P3 Solutions Group</h1>
                 <p className="text-sm" style={{color: '#a7a9ac'}}>Technology Investment Partners</p>
               </div>
             </div>
-            <nav className="hidden md:flex space-x-8">
+            <nav className="hidden md:flex space-x-8 text-lg">
               <a href="#about" style={{color: '#a7a9ac'}} className="hover:transition-colors duration-200" onMouseEnter={(e) => e.target.style.color = '#dd0000'} onMouseLeave={(e) => e.target.style.color = '#a7a9ac'}>About</a>
               <a href="#portfolio" style={{color: '#a7a9ac'}} className="hover:transition-colors duration-200" onMouseEnter={(e) => e.target.style.color = '#dd0000'} onMouseLeave={(e) => e.target.style.color = '#a7a9ac'}>Portfolio</a>
               <a href="#contact" style={{color: '#a7a9ac'}} className="hover:transition-colors duration-200" onMouseEnter={(e) => e.target.style.color = '#dd0000'} onMouseLeave={(e) => e.target.style.color = '#a7a9ac'}>Contact</a>
