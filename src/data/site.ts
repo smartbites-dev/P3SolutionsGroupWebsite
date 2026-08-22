@@ -32,7 +32,3 @@ export const nav: NavItem[] = [
   { label: 'Contact', href: '#contact' },
   // TODO: add { label: 'Insights', href: '/insights' } once the first article ships.
 ];
-
-/** Subject-line-primed mailto links so inbound intent is legible on arrival. */
-export const mailto = (subject: string) =>
-  `mailto:${site.email}?subject=${encodeURIComponent(subject)}`;

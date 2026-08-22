@@ -2,7 +2,6 @@ import { ArrowRight } from 'lucide-react';
 import { Container } from '../layout/Container';
 import { Button } from '../ui/Button';
 import { Eyebrow } from '../ui/Eyebrow';
-import { mailto } from '../../data/site';
 
 export function Hero() {
   return (
@@ -32,7 +31,7 @@ export function Hero() {
               Explore What We Build
               <ArrowRight className="h-4 w-4" />
             </Button>
-            <Button href={mailto('Working with P3')} variant="secondary">
+            <Button href="#contact" variant="secondary">
               Work With P3
             </Button>
           </div>

@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Container } from './Container';
-import { mailto, nav, site } from '../../data/site';
+import { nav, site } from '../../data/site';
 
 export function Header() {
   const [open, setOpen] = useState(false);
@@ -67,7 +67,7 @@ export function Header() {
               </a>
             ))}
             <a
-              href={mailto('Working with P3')}
+              href="#contact"
               className="rounded-lg bg-p3-red px-5 py-2.5 text-sm font-semibold text-white transition-colors duration-200 hover:bg-p3-red-deep"
             >
               Work With P3
@@ -102,7 +102,7 @@ export function Header() {
                 </a>
               ))}
               <a
-                href={mailto('Working with P3')}
+                href="#contact"
                 onClick={() => setOpen(false)}
                 className="mt-5 rounded-lg bg-p3-red px-5 py-3.5 text-center text-sm font-semibold text-white transition-colors hover:bg-p3-red-deep"
               >

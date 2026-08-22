@@ -2,7 +2,6 @@ import { ArrowRight } from 'lucide-react';
 import { Section } from '../layout/Section';
 import { Button } from '../ui/Button';
 import { services } from '../../data/services';
-import { mailto } from '../../data/site';
 
 export function Services() {
   return (
@@ -44,7 +43,7 @@ export function Services() {
       </div>
 
       <div className="mt-14 text-center">
-        <Button href={mailto('AI Operating System — initial conversation')}>
+        <Button href="#contact">
           Build Your AI Operating System
           <ArrowRight className="h-4 w-4" />
         </Button>

@@ -79,6 +79,32 @@
     </script>
   </head>
   <body>
+    <!--
+      Netlify Forms detection stub.
+
+      Netlify parses deployed HTML at build time to register forms. This site is a
+      client-rendered SPA, so the real form in src/components/ui/ContactForm.tsx does
+      not exist in the served HTML. This hidden copy is what Netlify registers; the
+      React form submits to it by posting `form-name=p3-contact`.
+
+      Field names here MUST stay in sync with ContactForm.tsx.
+    -->
+    <form name="p3-contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" hidden>
+      <input type="hidden" name="form-name" value="p3-contact" />
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <input type="text" name="company" />
+      <input type="tel" name="phone" />
+      <select name="interest">
+        <option value="Consulting &amp; implementation">Consulting &amp; implementation</option>
+        <option value="Products &amp; platforms">Products &amp; platforms</option>
+        <option value="Companies &amp; ventures">Companies &amp; ventures</option>
+        <option value="Something else">Something else</option>
+      </select>
+      <textarea name="message"></textarea>
+      <input type="text" name="bot-field" />
+    </form>
+
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
