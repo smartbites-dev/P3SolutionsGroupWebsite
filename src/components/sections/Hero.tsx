@@ -14,7 +14,7 @@ export function Hero() {
 
       <Container className="relative py-24 lg:py-36">
         <div className="max-w-4xl animate-fade-up">
-          <Eyebrow>AI Ventures · Products · Systems</Eyebrow>
+          <Eyebrow size="lg">AI Ventures · Products · Systems</Eyebrow>
 
           <h1 className="mt-6 text-4xl leading-[1.08] sm:text-5xl lg:text-6xl">
             Build Smarter Businesses.
@@ -43,10 +43,10 @@ export function Hero() {
               { term: 'Transform', desc: 'Implementation for other organizations' },
             ].map((item) => (
               <div key={item.term}>
-                <dt className="font-mono text-xs uppercase tracking-eyebrow text-p3-red">
+                <dt className="font-mono text-sm uppercase tracking-eyebrow text-p3-red">
                   {item.term}
                 </dt>
-                <dd className="mt-2 text-sm leading-relaxed text-zinc-600">{item.desc}</dd>
+                <dd className="mt-2.5 text-base leading-relaxed text-zinc-600">{item.desc}</dd>
               </div>
             ))}
           </dl>
