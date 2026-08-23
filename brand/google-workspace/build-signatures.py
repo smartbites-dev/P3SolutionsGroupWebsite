@@ -25,22 +25,48 @@ INK = "#000000"
 MUTED = "#5b5b5b"
 FAINT = "#8a8a8a"
 RULE = "#cccccc"
+
+# Platform brand colours — red reads wrong on a platform's own name.
+FACEBOOK_BLUE = "#1877f2"
+LINKEDIN_BLUE = "#0a66c2"
 FONT = "Arial,Helvetica,sans-serif"
 
 BASE = "https://p3solutionsgroup.com"
 LOGO = f"{BASE}/logo-mark.png"
 
-P3_PHONE = ("602-220-9724", "tel:+16022209724")
-P3_SITE = "p3solutionsgroup.com"
-P3_TAGLINE = "AI Ventures &middot; Products &middot; Systems"
+# A brand is data, so a second company is an entry rather than a new template.
+P3 = {
+    "name": "P3 Solutions Group",
+    "colour": RED,
+    "tagline": "AI Ventures &middot; Products &middot; Systems",
+    "site": "p3solutionsgroup.com",
+    "phone": ("602-220-9724", "tel:+16022209724"),
+    "logo": f"{BASE}/logo-mark.png",
+}
+
+# SmartBites brand tokens, taken from that project's tailwind.config.js
+# (prawn / iron / rice) rather than sampled off the artwork.
+SMARTBITES = {
+    "name": "SmartBites",
+    "colour": "#ff8866",          # prawn
+    "tagline": "AI-Powered Food Intelligence",
+    "site": "smartbites.food",
+    "phone": ("602-220-9724", "tel:+16022209724"),
+    "logo": f"{BASE}/smartbites-mark.png",
+    "logo_size": 64,
+}
 
 IDENTITIES = [
-    {"key": "founder", "layout": "corporate",
+    {"key": "founder", "layout": "corporate", "brand": P3,
      "name": "Joe Davault", "title": "Founder",
      "email": "joe.davault@p3solutionsgroup.com"},
 
+    {"key": "smartbites", "layout": "corporate", "brand": SMARTBITES,
+     "name": "Joe Davault", "title": "Founder",
+     "email": "joe.davault@smartbites.food"},
+
     # Shared mailbox: the name line carries the role, so no separate title.
-    {"key": "support", "layout": "corporate",
+    {"key": "support", "layout": "corporate", "brand": P3,
      "name": "Customer Service / Support", "title": "",
      "email": "support@p3solutionsgroup.com"},
 
@@ -51,17 +77,18 @@ IDENTITIES = [
      "email": "joe.davault@gmail.com",
      "phone": ("602-614-1243", "tel:+16026141243"),
      "avatar": f"{BASE}/joe-davault.png", "avatar_size": 64,
-     "social": [("Facebook", "https://www.facebook.com/jdavault"),
-                ("LinkedIn", "https://www.linkedin.com/in/joe-davault-a5a3451/")]},
+     "social": [("Facebook", "https://www.facebook.com/jdavault", FACEBOOK_BLUE),
+                ("LinkedIn", "https://www.linkedin.com/in/joe-davault-a5a3451/", LINKEDIN_BLUE)]},
 ]
 
 sep = f'<span style="color:{RULE};">&nbsp;|&nbsp;</span>'
 
 
 def avatar_cell(i):
-    img = i.get("avatar", LOGO)
-    px = i.get("avatar_size", 56)
-    alt = i["name"] if i.get("avatar") else "P3 Solutions Group"
+    brand = i.get("brand", P3)
+    img = i.get("avatar", brand["logo"])
+    px = i.get("avatar_size", brand.get("logo_size", 56))
+    alt = i["name"] if i.get("avatar") else brand["name"]
     return (f'    <td style="padding:0 14px 0 0;vertical-align:middle;">\n'
             f'      <img src="{img}" width="{px}" height="{px}" alt="{alt}"\n'
             f'           style="display:block;border:0;width:{px}px;height:{px}px;" />\n'
@@ -75,30 +102,32 @@ def wrap(cells):
 
 
 def corporate_new(i):
+    b = i.get("brand", P3)
     title = (f'\n      <div style="font-size:11px;color:{MUTED};line-height:1.5;'
              f'padding-top:1px;">{i["title"]}</div>' if i["title"] else "")
-    phone, href = P3_PHONE
-    body = f'''    <td style="padding:0 0 0 14px;vertical-align:middle;border-left:2px solid {RED};">
+    phone, href = b["phone"]
+    body = f'''    <td style="padding:0 0 0 14px;vertical-align:middle;border-left:2px solid {b["colour"]};">
       <div style="font-size:14px;font-weight:bold;color:{INK};line-height:1.3;">{i["name"]}</div>{title}
-      <div style="font-size:12px;font-weight:bold;color:{RED};line-height:1.5;padding-top:5px;">P3 Solutions Group</div>
-      <div style="font-size:10px;color:{FAINT};line-height:1.5;letter-spacing:0.5px;">{P3_TAGLINE}</div>
+      <div style="font-size:12px;font-weight:bold;color:{b["colour"]};line-height:1.5;padding-top:5px;">{b["name"]}</div>
+      <div style="font-size:10px;color:{FAINT};line-height:1.5;letter-spacing:0.5px;">{b["tagline"]}</div>
       <div style="font-size:11px;line-height:1.7;padding-top:6px;">
-        <a href="{href}" style="color:{MUTED};text-decoration:none;">{phone}</a>{sep}<a href="mailto:{i["email"]}" style="color:{MUTED};text-decoration:none;">{i["email"]}</a>{sep}<a href="https://{P3_SITE}" style="color:{RED};text-decoration:none;font-weight:bold;">{P3_SITE}</a>
+        <a href="{href}" style="color:{MUTED};text-decoration:none;">{phone}</a>{sep}<a href="mailto:{i["email"]}" style="color:{MUTED};text-decoration:none;">{i["email"]}</a>{sep}<a href="https://{b["site"]}" style="color:{b["colour"]};text-decoration:none;font-weight:bold;">{b["site"]}</a>
       </div>
     </td>'''
     return wrap(avatar_cell(i) + "\n" + body)
 
 
 def corporate_reply(i):
+    b = i.get("brand", P3)
     frag = (f'<span style="color:{FAINT};">&nbsp;&middot;&nbsp;</span>'
             f'<span style="color:{MUTED};">{i["title"]}</span>' if i["title"] else "")
-    phone, href = P3_PHONE
-    return wrap(f'''    <td style="padding:0 0 0 11px;vertical-align:middle;border-left:2px solid {RED};">
+    phone, href = b["phone"]
+    return wrap(f'''    <td style="padding:0 0 0 11px;vertical-align:middle;border-left:2px solid {b["colour"]};">
       <div style="font-size:12px;line-height:1.5;color:{INK};">
         <strong>{i["name"]}</strong>{frag}
       </div>
       <div style="font-size:11px;line-height:1.6;padding-top:2px;">
-        <span style="color:{RED};font-weight:bold;">P3 Solutions Group</span>{sep}<a href="{href}" style="color:{MUTED};text-decoration:none;">{phone}</a>{sep}<a href="https://{P3_SITE}" style="color:{RED};text-decoration:none;">{P3_SITE}</a>
+        <span style="color:{b["colour"]};font-weight:bold;">{b["name"]}</span>{sep}<a href="{href}" style="color:{MUTED};text-decoration:none;">{phone}</a>{sep}<a href="https://{b["site"]}" style="color:{b["colour"]};text-decoration:none;">{b["site"]}</a>
       </div>
     </td>''')
 
@@ -106,8 +135,8 @@ def corporate_reply(i):
 def personal_new(i):
     phone, href = i["phone"]
     social = sep.join(
-        f'<a href="{url}" style="color:{RED};text-decoration:none;font-weight:bold;">{label}</a>'
-        for label, url in i["social"])
+        f'<a href="{url}" style="color:{colour};text-decoration:none;font-weight:bold;">{label}</a>'
+        for label, url, colour in i["social"])
     return wrap(avatar_cell(i) + "\n" + f'''    <td style="padding:0 0 0 14px;vertical-align:middle;border-left:2px solid {RED};">
       <div style="font-size:14px;font-weight:bold;color:{INK};line-height:1.3;">{i["name"]}</div>
       <div style="font-size:11px;color:{MUTED};line-height:1.5;padding-top:1px;">{i["title"]}</div>
@@ -122,8 +151,8 @@ def personal_new(i):
 def personal_reply(i):
     phone, href = i["phone"]
     social = sep.join(
-        f'<a href="{url}" style="color:{RED};text-decoration:none;">{label}</a>'
-        for label, url in i["social"])
+        f'<a href="{url}" style="color:{colour};text-decoration:none;font-weight:bold;">{label}</a>'
+        for label, url, colour in i["social"])
     return wrap(f'''    <td style="padding:0 0 0 11px;vertical-align:middle;border-left:2px solid {RED};">
       <div style="font-size:12px;line-height:1.5;color:{INK};">
         <strong>{i["name"]}</strong><span style="color:{FAINT};">&nbsp;&middot;&nbsp;</span><span style="color:{MUTED};">{i["title"]}</span>
