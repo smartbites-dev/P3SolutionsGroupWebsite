@@ -22,6 +22,11 @@ Deferred work, roughly by readiness. Direction lives in
 - **Custom email sender** for form notifications — outgoing webhook → Netlify Function → own
   provider. Deferred deliberately; see
   [`features/contact-form/decisions.md`](../features/contact-form/decisions.md).
+- **Possibly split the provider adapters.** `AGENTS.md` is currently a symlink to `CLAUDE.md`,
+  so the two cannot drift. If Claude-specific and generic-agent instructions ever genuinely
+  diverge, replace the symlink with two independent thin pointers into
+  [`.ai/README.md`](../README.md). Non-blocking — do not introduce the complexity before the
+  divergence is real.
 - **Proper 1200×630 OG card.** Currently the logo at 1200×859, which letterboxes in previews.
 - **Retire `.bolt/`** — `config.json` and `prompt` are Bolt.new scaffolding. The only durable
   content (Tailwind, lucide-react, minimal dependencies) is now in
