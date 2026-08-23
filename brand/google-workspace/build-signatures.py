@@ -26,12 +26,21 @@ SITE = "p3solutionsgroup.com"
 TAGLINE = "AI Ventures &middot; Products &middot; Systems"
 LOGO = "https://p3solutionsgroup.com/logo-mark.png"
 
+# Images must be hot-linked from a public URL — mail clients cannot read local
+# files, and base64 blows Gmail's 10,000 character signature limit.
+BASE = "https://p3solutionsgroup.com"
+
 IDENTITIES = [
     {"key": "founder", "name": "Joe Davault", "title": "Founder",
      "email": "joe.davault@p3solutionsgroup.com"},
     # Shared mailbox: the name line carries the role, so no separate title.
     {"key": "support", "name": "Customer Service / Support", "title": "",
      "email": "support@p3solutionsgroup.com"},
+    # Personal account. "avatar" swaps the logo for a headshot; the circle is
+    # baked into the PNG because Outlook desktop ignores border-radius.
+    {"key": "personal", "name": "Joe Davault", "title": "Founder",
+     "email": "joe.davault@p3solutionsgroup.com",
+     "avatar": f"{BASE}/joe-davault.png", "avatar_size": 64},
 ]
 
 
@@ -40,11 +49,14 @@ def new_signature(i):
         f'\n      <div style="font-size:11px;color:{MUTED};line-height:1.5;'
         f'padding-top:1px;">{i["title"]}</div>' if i["title"] else ""
     )
+    img = i.get("avatar", LOGO)
+    px = i.get("avatar_size", 56)
+    alt = i["name"] if i.get("avatar") else "P3 Solutions Group"
     return f'''<table cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;font-family:{FONT};">
   <tr>
     <td style="padding:0 14px 0 0;vertical-align:middle;">
-      <img src="{LOGO}" width="56" height="56" alt="P3 Solutions Group"
-           style="display:block;border:0;width:56px;height:56px;" />
+      <img src="{img}" width="{px}" height="{px}" alt="{alt}"
+           style="display:block;border:0;width:{px}px;height:{px}px;" />
     </td>
     <td style="padding:0 0 0 14px;vertical-align:middle;border-left:2px solid {RED};">
       <div style="font-size:14px;font-weight:bold;color:{INK};line-height:1.3;">{i["name"]}</div>{title_row}
