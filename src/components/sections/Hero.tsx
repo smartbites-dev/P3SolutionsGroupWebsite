@@ -14,33 +14,33 @@ export function Hero() {
 
       <Container className="relative py-24 lg:py-36">
         <div className="max-w-4xl animate-fade-up">
-          <Eyebrow size="lg">AI Ventures · Products · Systems</Eyebrow>
+          <Eyebrow size="lg">AI-Driven Software Delivery</Eyebrow>
 
           <h1 className="mt-6 text-4xl leading-[1.08] sm:text-5xl lg:text-6xl">
-            Build Smarter Businesses.
-            <span className="block text-p3-red">Operate Them With AI.</span>
+            Your Developers Adopted AI.
+            <span className="block text-p3-red">Your Engineering System Didn't.</span>
           </h1>
 
           <p className="mt-7 max-w-2xl text-lg leading-relaxed text-zinc-600 lg:text-xl">
-            P3 Solutions Group builds AI-driven companies, products, and operating systems — and
-            helps organizations transform repeatable work into intelligent workflows.
+            P3 helps engineering organizations turn individual AI coding experiments into a
+            repeatable, governed, measurable software-delivery capability.
           </p>
 
           <div className="mt-10 flex flex-col gap-3 sm:flex-row">
-            <Button href="#what-we-do">
-              Explore What We Build
+            <Button href="#contact">
+              Assess Your AI Engineering Maturity
               <ArrowRight className="h-4 w-4" />
             </Button>
-            <Button href="#contact" variant="secondary">
-              Work With P3
+            <Button href="#maturity" variant="secondary">
+              See the Maturity Model
             </Button>
           </div>
 
           <dl className="mt-16 grid max-w-2xl gap-8 border-t border-zinc-200 pt-8 sm:grid-cols-3">
             {[
-              { term: 'Build', desc: 'Companies we own and operate' },
-              { term: 'Productize', desc: 'Systems proven in the real world' },
-              { term: 'Transform', desc: 'Implementation for other organizations' },
+              { term: 'Safe', desc: 'Architecture, quality, and security stay intact' },
+              { term: 'Repeatable', desc: 'Standards and context, not tribal knowledge' },
+              { term: 'Measurable', desc: 'Proof the investment improved delivery' },
             ].map((item) => (
               <div key={item.term}>
                 <dt className="font-mono text-sm uppercase tracking-eyebrow text-p3-red">

@@ -36,6 +36,7 @@ export const ventures: Venture[] = [
       'AI recipes matched to an individual allergen profile',
       'Restaurant menu discovery filtered by allergens and diet',
       'Personalized before account creation, not after',
+      "P3's proving ground for its own AI-driven software-delivery practice",
     ],
     // TODO: swap for the SmartBites marketing site once it is live.
     link: { label: 'Visit SmartBites', href: 'https://apps.apple.com/us/app/smartbites-cooking/id6745743999' },

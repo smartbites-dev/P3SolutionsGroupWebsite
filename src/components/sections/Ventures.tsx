@@ -8,8 +8,8 @@ export function Ventures() {
     <Section
       id="companies"
       eyebrow="Companies & Ventures"
-      title="We don't just advise on AI. We build and operate companies with it."
-      intro="P3 Solutions Group is the parent company behind businesses built on software, systems, automation, and AI from the start."
+      title="Where we prove it first"
+      intro="P3 runs its own AI-driven delivery practice against real, live software — not internal demos. SmartBites is where that happens today."
     >
       {/* Single venture reads as a feature; additional entries fall into a two-up grid. */}
       <div className={`grid gap-6 ${ventures.length > 1 ? 'lg:grid-cols-2' : 'mx-auto max-w-4xl'}`}>

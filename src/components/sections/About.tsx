@@ -4,7 +4,7 @@ import { Eyebrow } from '../ui/Eyebrow';
 const principles = [
   {
     title: 'Systems thinking',
-    body: 'We look at how work moves through a business before we look at what to automate.',
+    body: 'We look at how work moves through the SDLC before we look at what to automate.',
   },
   {
     title: 'Builder mentality',
@@ -12,11 +12,11 @@ const principles = [
   },
   {
     title: 'Pragmatic about AI',
-    body: 'AI is used where it creates leverage. Elsewhere, ordinary software is the better answer.',
+    body: 'AI participates where it earns its place in the delivery lifecycle. Elsewhere, ordinary engineering practice is the better answer.',
   },
   {
     title: 'Measurable outcomes',
-    body: 'A system earns its place by what it changes in the operation, not by how it demos.',
+    body: 'A practice earns its place by what it changes in delivery outcomes, not by how it demos.',
   },
 ];
 
@@ -28,25 +28,31 @@ export function About() {
           <div>
             <Eyebrow>About P3</Eyebrow>
             <h2 className="mt-4 text-3xl leading-tight sm:text-4xl lg:text-[2.75rem]">
-              A small company built to produce disproportionate output
+              Engineers redesigning delivery around AI — not consultants learning how software
+              works
             </h2>
 
             <div className="mt-7 space-y-5 text-lg leading-relaxed text-zinc-600">
               <p>
-                P3 Solutions Group is a founder-led operating company built on deep software
-                engineering experience and modern AI-native operating models. We have spent careers
-                designing systems, architecting software, and untangling how work actually moves
-                through organizations — and we now apply that to businesses we own as well as ones
-                we advise.
+                P3 Solutions Group is led by{' '}
+                <strong className="font-semibold text-p3-ink">Joe Davault</strong>, a software
+                engineer and architect with 20+ years building production systems — most recently
+                as a Principal Software Engineer working across the full stack, cloud
+                infrastructure, and enterprise integration. That background is why P3 approaches
+                AI-DLC as engineers redesigning software delivery around AI, not as AI specialists
+                learning how a software development lifecycle works after the fact.
               </p>
               <p>
-                We are deliberately small. Modern software, automation, and AI let a focused team
-                operate at a scale that used to require a department, and we would rather prove that
-                in our own companies than describe it in a deck.
+                We've lived through the parts of the job AI can't shortcut — legacy modernization,
+                CI/CD, security reviews, the judgment calls about where a system is allowed to be
+                wrong — and we apply that experience to the question underneath every AI adoption
+                effort: where AI should participate, what context it needs, what it should be
+                allowed to do, where humans stay accountable, and whether any of it actually
+                improved delivery.
               </p>
               <p className="font-medium text-p3-ink">
-                We build. We operate. We productize. Then we help others implement what we have
-                learned.
+                We build. We measure. We prove it on our own software first. Then we help other
+                engineering organizations do the same.
               </p>
             </div>
           </div>

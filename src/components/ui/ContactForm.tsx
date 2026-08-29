@@ -13,9 +13,9 @@ import { site } from '../../data/site';
 const FORM_NAME = 'p3-contact';
 
 const interests = [
-  'Consulting & implementation',
-  'Products & platforms',
-  'Companies & ventures',
+  'AI-DLC / engineering maturity',
+  'Broader AI-enabled capabilities',
+  'Ventures & partnerships',
   'Something else',
 ];
 

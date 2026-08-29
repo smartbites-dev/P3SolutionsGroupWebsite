@@ -6,6 +6,7 @@ One folder per durable capability. A feature outlives the tasks that built it.
 |---|---|---|
 | [`contact-form/`](./contact-form/) | Shipped | Netlify Forms contact form and its notification path |
 | [`email-signatures/`](./email-signatures/) | Shipped | Generated email signatures across P3, SmartBites, and personal identities |
+| [`ai-dlc-repositioning/`](./ai-dlc-repositioning/) | Shipped | Homepage repositioning around the AI-Driven Software Delivery wedge; broader offerings consolidated to secondary |
 
 The homepage sections themselves are not features — they are content driven by `src/data/*.ts`
 and described in [`memory/architecture.md`](../memory/architecture.md). A section earns a

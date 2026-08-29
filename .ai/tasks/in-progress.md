@@ -1,12 +1,14 @@
 # In Progress
 
-Nothing is mid-implementation. The items below are **blocked on user input**, not on work.
+Nothing is mid-implementation. `ai-dlc-repositioning` shipped (2026-08-29) — see
+[`features/ai-dlc-repositioning/`](../features/ai-dlc-repositioning/) and
+[`tasks/completed/2026-08-ai-dlc-repositioning.md`](./completed/2026-08-ai-dlc-repositioning.md).
+It also resolved blocked item #1 below (founder name + title), via the `About` copy change.
 
 ## Blocked — needs content from the user
 
 | # | Item | Where it lands | Notes |
 |---|---|---|---|
-| 1 | Founder name + title | `src/components/sections/About.tsx` | About says "founder-led" and names nobody. Highest-value fix on the site. |
 | 2 | SmartBites logo | `src/data/ventures.ts` → `logo:` | Currently renders an "S" lettermark. Drop a file in `public/`. |
 | 3 | SmartBites link | `src/data/ventures.ts` → `link.href` | Currently the App Store listing `id6745743999`. Swap for the marketing site if preferred. |
 | 4 | SmartBites `™` | `src/data/ventures.ts` → `nameSuffix` | Included. Remove if not claimed. |

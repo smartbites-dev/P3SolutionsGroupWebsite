@@ -4,10 +4,10 @@ import { ContactForm } from '../ui/ContactForm';
 import { site } from '../../data/site';
 
 const goodFit = [
-  'Repeatable work that consumes real hours every week',
-  'Processes that currently live in one person’s head',
-  'Systems that hold the right data but do not talk to each other',
-  'A business where AI should change the operating model, not add a chatbot',
+  'Developers already using Copilot, Claude, Cursor, or Codex with no shared standard across the team',
+  'No visibility into whether AI investment is actually improving delivery',
+  'Architecture, review, or security debt accumulating faster than it can be caught',
+  'Uncertainty about where humans must stay accountable as agents take on more',
 ];
 
 export function Contact() {
@@ -15,15 +15,16 @@ export function Contact() {
     <Section
       id="contact"
       eyebrow="Contact"
-      title="Let's talk about the work"
-      intro="Tell us what the repeatable work looks like in your business. That conversation is usually more useful than a demo."
+      title="Where is your engineering organization on the AI-DLC curve?"
+      intro="Tell us what AI adoption actually looks like on your team today. That conversation is more useful than a demo."
     >
       <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-[1.35fr_1fr]">
         <div className="rounded-2xl border border-zinc-200 bg-white p-8 lg:p-10">
           <h3 className="text-xl">Send us a message</h3>
           <p className="mt-3 leading-relaxed text-zinc-600">
-            Whether you are exploring what AI could change in your operation, interested in what we
-            are building, or looking to work together — we would like to hear about it.
+            Whether you're assessing where your engineering organization sits on the AI-DLC curve,
+            exploring P3's broader capabilities, or interested in what we're building — we would
+            like to hear about it.
           </p>
 
           <div className="mt-8">

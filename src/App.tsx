@@ -1,13 +1,12 @@
 import { Header } from './components/layout/Header';
 import { Footer } from './components/layout/Footer';
 import { Hero } from './components/sections/Hero';
-import { WhatWeDo } from './components/sections/WhatWeDo';
-import { HowWeThink } from './components/sections/HowWeThink';
-import { OperatingSystem } from './components/sections/OperatingSystem';
-import { Ventures } from './components/sections/Ventures';
-import { Products } from './components/sections/Products';
+import { AiDlc } from './components/sections/AiDlc';
+import { MaturityModel } from './components/sections/MaturityModel';
+import { Measurement } from './components/sections/Measurement';
+import { Capabilities } from './components/sections/Capabilities';
 import { BuiltInsideP3 } from './components/sections/BuiltInsideP3';
-import { Services } from './components/sections/Services';
+import { Ventures } from './components/sections/Ventures';
 import { About } from './components/sections/About';
 import { Contact } from './components/sections/Contact';
 
@@ -25,13 +24,12 @@ function App() {
 
       <main id="main">
         <Hero />
-        <WhatWeDo />
-        <HowWeThink />
-        <OperatingSystem />
-        <Ventures />
-        <Products />
+        <AiDlc />
+        <MaturityModel />
+        <Measurement />
+        <Capabilities />
         <BuiltInsideP3 />
-        <Services />
+        <Ventures />
         <About />
         <Contact />
       </main>

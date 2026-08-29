@@ -16,6 +16,9 @@ Deferred work, roughly by readiness. Direction lives in
   products on purpose. Replace entries as things are genuinely productized.
 
 ## Nice to have
+- **`Ventures.tsx`'s "More To Come" wording** — reads slightly off now that the section frames
+  SmartBites as proof of practice, not just "the first of more companies." Noted during
+  `ai-dlc-repositioning` review; explicitly non-blocking, left untouched for that feature.
 - **Logo wordmark revision** — the mark still carries the old
   "Integrating People, Practices, and Principles" tagline. See
   [`memory/brand.md`](../memory/brand.md).

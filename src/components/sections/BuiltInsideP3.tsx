@@ -20,13 +20,14 @@ export function BuiltInsideP3() {
               <span className="block text-p3-red">Productized When Proven.</span>
             </h2>
             <p className="mt-6 text-lg leading-relaxed text-zinc-600">
-              We don't begin with theoretical AI demos. We build systems to operate real businesses,
-              measure what works, improve them, and turn the strongest solutions into repeatable
-              products and services.
+              We don't begin with theoretical AI demos. We run our AI-driven delivery practice
+              against our own software first, measure what works, improve it, and turn the
+              strongest solutions into repeatable standards and controls.
             </p>
             <p className="mt-5 leading-relaxed text-zinc-600">
-              It also means our consulting work is not theory. When we recommend an approach, it is
-              usually one we have already had to live with.
+              SmartBites — a live consumer product, not an internal prototype — is where that
+              happens today. When we recommend an approach to another engineering organization, it
+              is one we have already had to live with.
             </p>
           </div>
 
