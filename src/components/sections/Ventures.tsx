@@ -7,6 +7,7 @@ export function Ventures() {
   return (
     <Section
       id="companies"
+      tone="dark"
       eyebrow="Companies & Ventures"
       title="Where we prove it first"
       intro="P3 runs its own AI-driven delivery practice against real, live software — not internal demos. SmartBites is where that happens today."
@@ -16,9 +17,9 @@ export function Ventures() {
         {ventures.map((v) => (
           <article
             key={v.id}
-            className="group flex flex-col overflow-hidden rounded-2xl border border-zinc-200 bg-white transition-shadow duration-300 hover:shadow-xl"
+            className="group flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] transition-shadow duration-300 hover:shadow-xl"
           >
-            <div className="flex flex-wrap items-center justify-between gap-4 border-b border-zinc-100 bg-p3-mist px-8 py-6">
+            <div className="flex flex-wrap items-center justify-between gap-4 border-b border-white/10 bg-white/[0.03] px-8 py-6">
               <div className="flex items-center gap-4">
                 {v.logo ? (
                   <img
@@ -37,7 +38,7 @@ export function Ventures() {
                   </div>
                 )}
                 <div>
-                  <h3 className="text-2xl">
+                  <h3 className="text-2xl text-white">
                     {v.name}
                     {v.nameSuffix && (
                       <span className="align-super text-xs text-zinc-500">{v.nameSuffix}</span>
@@ -49,19 +50,19 @@ export function Ventures() {
                 </div>
               </div>
 
-              <span className="inline-flex items-center gap-2 rounded-full border border-p3-red/25 bg-white px-3.5 py-1.5 font-mono text-xs font-medium text-p3-red-deep">
+              <span className="inline-flex items-center gap-2 rounded-full border border-p3-red/25 bg-white/5 px-3.5 py-1.5 font-mono text-xs font-medium text-p3-red">
                 <span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-p3-red" />
                 {v.status}
               </span>
             </div>
 
             <div className="flex flex-1 flex-col p-8">
-              <p className="text-lg font-medium leading-relaxed text-p3-ink">{v.summary}</p>
-              <p className="mt-4 leading-relaxed text-zinc-600">{v.body}</p>
+              <p className="text-lg font-medium leading-relaxed text-white">{v.summary}</p>
+              <p className="mt-4 leading-relaxed text-zinc-400">{v.body}</p>
 
               <ul className="mt-7 space-y-2.5">
                 {v.highlights.map((h) => (
-                  <li key={h} className="flex items-start gap-3 text-sm text-zinc-600">
+                  <li key={h} className="flex items-start gap-3 text-sm text-zinc-400">
                     <span
                       aria-hidden="true"
                       className="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-p3-red"
@@ -77,7 +78,7 @@ export function Ventures() {
                     href={v.link.href}
                     target="_blank"
                     rel="noreferrer noopener"
-                    className="inline-flex items-center gap-2 text-sm font-semibold text-p3-red transition-colors hover:text-p3-red-deep"
+                    className="inline-flex items-center gap-2 text-sm font-semibold text-p3-red transition-colors hover:text-white"
                   >
                     {v.link.label}
                     <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -89,9 +90,9 @@ export function Ventures() {
         ))}
       </div>
 
-      <div className="mx-auto mt-14 max-w-2xl rounded-2xl border border-dashed border-zinc-300 p-8 text-center">
-        <Eyebrow>More To Come</Eyebrow>
-        <p className="mt-4 leading-relaxed text-zinc-600">
+      <div className="mx-auto mt-14 max-w-2xl rounded-2xl border border-dashed border-white/15 p-8 text-center">
+        <Eyebrow tone="dark">More To Come</Eyebrow>
+        <p className="mt-4 leading-relaxed text-zinc-400">
           P3 is actively developing its next ventures. We add a company here when it exists and
           operates — not before.
         </p>

@@ -8,7 +8,7 @@ type SectionProps = {
   title?: ReactNode;
   intro?: ReactNode;
   children: ReactNode;
-  tone?: 'white' | 'mist' | 'dark';
+  tone?: 'white' | 'mist' | 'dark' | 'charcoal';
   /** Centres the heading block. Left-aligned reads more editorial for dense sections. */
   align?: 'center' | 'left';
   className?: string;
@@ -18,6 +18,7 @@ const tones = {
   white: 'bg-white',
   mist: 'bg-p3-mist',
   dark: 'bg-p3-deep',
+  charcoal: 'bg-p3-charcoal',
 };
 
 export function Section({
@@ -30,7 +31,7 @@ export function Section({
   align = 'center',
   className = '',
 }: SectionProps) {
-  const dark = tone === 'dark';
+  const dark = tone === 'dark' || tone === 'charcoal';
   const hasHeading = Boolean(eyebrow || title || intro);
 
   return (

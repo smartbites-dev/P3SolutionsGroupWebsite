@@ -25,23 +25,23 @@ export function MaturityLadder() {
                 isPrimary
                   ? 'border border-p3-red bg-p3-red text-white'
                   : isMuted
-                    ? 'border border-dashed border-zinc-300 bg-white text-zinc-400'
-                    : 'border border-p3-red/30 bg-white text-p3-red'
+                    ? 'border border-dashed border-white/15 bg-white/5 text-zinc-500'
+                    : 'border border-p3-red/30 bg-white/5 text-p3-red'
               }`}
             >
               {lvl.level}
             </div>
-            <h3 className={`text-base font-semibold ${isMuted ? 'text-zinc-500' : 'text-p3-ink'}`}>
+            <h3 className={`text-base font-semibold ${isMuted ? 'text-zinc-500' : 'text-white'}`}>
               {lvl.stage}
             </h3>
             <p
               className={`mt-1.5 font-mono text-xs uppercase tracking-wide ${
-                isMuted ? 'text-zinc-400' : 'text-p3-red-deep'
+                isMuted ? 'text-zinc-600' : 'text-p3-red'
               }`}
             >
               {lvl.trigger}
             </p>
-            <p className={`mt-2 text-sm leading-relaxed ${isMuted ? 'text-zinc-500' : 'text-zinc-600'}`}>
+            <p className={`mt-2 text-sm leading-relaxed ${isMuted ? 'text-zinc-500' : 'text-zinc-400'}`}>
               {lvl.action}
             </p>
           </li>

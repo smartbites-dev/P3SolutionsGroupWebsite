@@ -22,20 +22,20 @@ const principles = [
 
 export function About() {
   return (
-    <section id="about" className="scroll-mt-24 bg-p3-mist py-20 lg:py-28">
+    <section id="about" className="scroll-mt-24 bg-p3-deep py-20 lg:py-28">
       <Container>
         <div className="grid gap-14 lg:grid-cols-[1fr_1fr] lg:gap-20">
           <div>
-            <Eyebrow>About P3</Eyebrow>
-            <h2 className="mt-4 text-3xl leading-tight sm:text-4xl lg:text-[2.75rem]">
+            <Eyebrow tone="dark">About P3</Eyebrow>
+            <h2 className="mt-4 text-3xl leading-tight text-white sm:text-4xl lg:text-[2.75rem]">
               Engineers redesigning delivery around AI — not consultants learning how software
               works
             </h2>
 
-            <div className="mt-7 space-y-5 text-lg leading-relaxed text-zinc-600">
+            <div className="mt-7 space-y-5 text-lg leading-relaxed text-zinc-400">
               <p>
                 P3 Solutions Group is led by{' '}
-                <strong className="font-semibold text-p3-ink">Joe Davault</strong>, a software
+                <strong className="font-semibold text-white">Joe Davault</strong>, a software
                 engineer and architect with 20+ years building production systems — most recently
                 as a Principal Software Engineer working across the full stack, cloud
                 infrastructure, and enterprise integration. That background is why P3 approaches
@@ -50,7 +50,7 @@ export function About() {
                 allowed to do, where humans stay accountable, and whether any of it actually
                 improved delivery.
               </p>
-              <p className="font-medium text-p3-ink">
+              <p className="font-medium text-white">
                 We build. We measure. We prove it on our own software first. Then we help other
                 engineering organizations do the same.
               </p>
@@ -59,9 +59,9 @@ export function About() {
 
           <div className="grid gap-5 sm:grid-cols-2 lg:content-start">
             {principles.map((p) => (
-              <div key={p.title} className="rounded-2xl border border-zinc-200 bg-white p-6">
-                <h3 className="text-base">{p.title}</h3>
-                <p className="mt-2.5 text-sm leading-relaxed text-zinc-600">{p.body}</p>
+              <div key={p.title} className="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
+                <h3 className="text-base text-white">{p.title}</h3>
+                <p className="mt-2.5 text-sm leading-relaxed text-zinc-400">{p.body}</p>
               </div>
             ))}
           </div>

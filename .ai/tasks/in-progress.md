@@ -5,6 +5,12 @@ Nothing is mid-implementation. `ai-dlc-repositioning` shipped (2026-08-29) — s
 [`tasks/completed/2026-08-ai-dlc-repositioning.md`](./completed/2026-08-ai-dlc-repositioning.md).
 It also resolved blocked item #1 below (founder name + title), via the `About` copy change.
 
+`dark-tone-rhythm` also shipped (2026-08-29) — see
+[`features/dark-tone-rhythm/`](../features/dark-tone-rhythm/) and
+[`tasks/completed/2026-08-dark-tone-rhythm.md`](./completed/2026-08-dark-tone-rhythm.md). The
+global `:focus-visible` white ring-offset on dark sections is a known, accepted, documented
+limitation — not tracked as open work; see the feature's design.md.
+
 ## Blocked — needs content from the user
 
 | # | Item | Where it lands | Notes |

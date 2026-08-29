@@ -12,6 +12,7 @@ export default {
           mist: '#f5f5f5',
           ink: '#000000',
           deep: '#0a0a0a',
+          charcoal: '#1e1e1e',
         },
       },
       fontFamily: {
