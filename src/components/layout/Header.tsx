@@ -1,7 +1,13 @@
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { Container } from './Container';
 import { nav, site } from '../../data/site';
+
+/** Every nav item resolves this way — works identically from any route. */
+function navTarget(item: { href: string; page?: string }): string {
+  return item.page ?? `/${item.href}`;
+}
 
 export function Header() {
   const [open, setOpen] = useState(false);
@@ -38,7 +44,7 @@ export function Header() {
     >
       <Container>
         <div className="flex items-center justify-between py-3">
-          <a href="#top" className="flex items-center gap-3" aria-label={`${site.name} home`}>
+          <Link to="/" className="flex items-center gap-3" aria-label={`${site.name} home`}>
             <img
               src="/logo-mark.png"
               alt=""
@@ -54,24 +60,24 @@ export function Header() {
                 {site.tagline}
               </span>
             </span>
-          </a>
+          </Link>
 
           <nav className="hidden items-center gap-8 lg:flex" aria-label="Primary">
             {nav.map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
+              <Link
+                key={item.label}
+                to={navTarget(item)}
                 className="text-sm font-medium text-zinc-600 transition-colors duration-200 hover:text-p3-red"
               >
                 {item.label}
-              </a>
+              </Link>
             ))}
-            <a
-              href="#contact"
+            <Link
+              to="/#contact"
               className="rounded-lg bg-p3-red px-5 py-2.5 text-sm font-semibold text-white transition-colors duration-200 hover:bg-p3-red-deep"
             >
               Work With P3
-            </a>
+            </Link>
           </nav>
 
           <button
@@ -92,22 +98,22 @@ export function Header() {
           <Container className="py-4">
             <nav className="flex flex-col" aria-label="Primary mobile">
               {nav.map((item) => (
-                <a
-                  key={item.href}
-                  href={item.href}
+                <Link
+                  key={item.label}
+                  to={navTarget(item)}
                   onClick={() => setOpen(false)}
                   className="border-b border-zinc-100 py-4 text-base font-medium text-zinc-700 transition-colors hover:text-p3-red"
                 >
                   {item.label}
-                </a>
+                </Link>
               ))}
-              <a
-                href="#contact"
+              <Link
+                to="/#contact"
                 onClick={() => setOpen(false)}
                 className="mt-5 rounded-lg bg-p3-red px-5 py-3.5 text-center text-sm font-semibold text-white transition-colors hover:bg-p3-red-deep"
               >
                 Work With P3
-              </a>
+              </Link>
             </nav>
           </Container>
         </div>

@@ -1,0 +1,75 @@
+[
+  {
+    "slug": "from-story-to-release-engineering-harness",
+    "title": "From Story to Release: An Engineering Harness",
+    "description": "Joe Davault, Founder — AI is moving the engineer’s abstraction layer up from writing code to designing and governing the system that produces it. The Engineering Harness is the context, constraints, verification, and authority model that makes that transition safe, repeatable, and measurable.",
+    "date": "2026-09-05",
+    "author": "Joe Davault, Founder",
+    "status": "published",
+    "body": [
+      "For most of my career, the work of software engineering lived pretty close to the code.",
+      "We designed systems, made architecture decisions, wrote the implementation, reviewed the changes, ran the tests, and moved software through release.",
+      "AI changes that.",
+      "The more capable AI becomes, the less interesting the question is, “Can the AI write the code?”",
+      "The more important question becomes:",
+      "**What system surrounds the AI so that the software it helps produce is safe, repeatable, measurable, and aligned with the intent of the business?**",
+      "That system is the Engineering Harness.",
+      "An Engineering Harness is the combination of context, constraints, tools, workflows, verification, and authority boundaries that allow humans and AI agents to work together without turning software delivery into a collection of clever prompts and one-off experiments.",
+      "I’m seeing this shift firsthand.",
+      "Instead of spending all of my time directly writing implementation code, I’m increasingly spending time defining the story, approving architecture, establishing authority boundaries, reviewing evidence, and improving the system that allows AI to execute the work.",
+      "That is a different engineering role.",
+      "The abstraction layer is moving up.",
+      "The engineer is no longer responsible only for producing code. The engineer is increasingly responsible for designing and governing the system that produces the code.",
+      "That is where spec-driven development becomes important. The story defines the product intent. The engineering specification defines what must be true technically. The agent executes within those boundaries. Deterministic systems — tests, type checking, CI, security controls, quality gates, and deployment verification — independently prove what the agent claims to have completed.",
+      "And then there is authority.",
+      "An AI agent may be capable of changing architecture, modifying infrastructure, accepting a product story, or promoting software to production.",
+      "That does not mean it should have the authority to do so.",
+      "**Capability is not authority.**",
+      "The goal is not to remove humans from software delivery as quickly as possible.",
+      "The goal is to identify where human judgment genuinely adds value, make those boundaries explicit, and gradually allow the system to take on more responsibility as evidence proves that it can do so safely.",
+      "That is the path I see from AI-assisted development to AI-driven software delivery, and eventually to an Agentic Development Lifecycle.",
+      "Not autonomous software engineering for its own sake.",
+      "A better-engineered system for producing software."
+    ]
+  },
+  {
+    "slug": "orchestrating-autonomy",
+    "title": "Orchestrating Autonomy",
+    "description": "",
+    "date": "",
+    "status": "planned",
+    "body": []
+  },
+  {
+    "slug": "your-developers-adopted-ai",
+    "title": "Your Developers Adopted AI. Your Engineering System Didn't.",
+    "description": "",
+    "date": "",
+    "status": "planned",
+    "body": []
+  },
+  {
+    "slug": "ai-dlc-vs-adlc",
+    "title": "AI-DLC vs ADLC",
+    "description": "",
+    "date": "",
+    "status": "planned",
+    "body": []
+  },
+  {
+    "slug": "measuring-ai-engineering-roi",
+    "title": "Measuring AI Engineering ROI",
+    "description": "",
+    "date": "",
+    "status": "planned",
+    "body": []
+  },
+  {
+    "slug": "founder-cto-perspectives",
+    "title": "Founder / CTO Perspectives",
+    "description": "",
+    "date": "",
+    "status": "planned",
+    "body": []
+  }
+]
