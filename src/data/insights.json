@@ -1,0 +1,54 @@
+[
+  {
+    "slug": "from-story-to-release-engineering-harness",
+    "title": "From Story to Release: An Engineering Harness",
+    "description": "PLACEHOLDER — replaced with the real, anonymized article. This entry exists to prove the Insights routing/prerender/sitemap mechanism end to end.",
+    "date": "2026-09-05",
+    "status": "published",
+    "body": [
+      "PLACEHOLDER CONTENT — this paragraph and the ones below exist only to prove that a real article page renders, prerenders, and gets picked up by the sitemap.",
+      "The real article covers the shift from writing syntax to building an engineering harness, the autonomy levels from human-led to fully agentic delivery, spec-driven development as a contract between people and agents, and where human approval gates belong in that flow.",
+      "Once the real article lands, this file is the only thing that needs to change — the routing, prerendering, and sitemap mechanism does not."
+    ]
+  },
+  {
+    "slug": "orchestrating-autonomy",
+    "title": "Orchestrating Autonomy",
+    "description": "",
+    "date": "",
+    "status": "planned",
+    "body": []
+  },
+  {
+    "slug": "your-developers-adopted-ai",
+    "title": "Your Developers Adopted AI. Your Engineering System Didn't.",
+    "description": "",
+    "date": "",
+    "status": "planned",
+    "body": []
+  },
+  {
+    "slug": "ai-dlc-vs-adlc",
+    "title": "AI-DLC vs ADLC",
+    "description": "",
+    "date": "",
+    "status": "planned",
+    "body": []
+  },
+  {
+    "slug": "measuring-ai-engineering-roi",
+    "title": "Measuring AI Engineering ROI",
+    "description": "",
+    "date": "",
+    "status": "planned",
+    "body": []
+  },
+  {
+    "slug": "founder-cto-perspectives",
+    "title": "Founder / CTO Perspectives",
+    "description": "",
+    "date": "",
+    "status": "planned",
+    "body": []
+  }
+]
