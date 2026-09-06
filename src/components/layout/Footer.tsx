@@ -1,12 +1,12 @@
+import { Link } from 'react-router-dom';
 import { Container } from './Container';
 import { nav, site } from '../../data/site';
 
-type Props = {
-  /** See `Header`'s `basePath` — same reasoning, same default. */
-  basePath?: string;
-};
+function navTarget(item: { href: string; page?: string }): string {
+  return item.page ?? `/${item.href}`;
+}
 
-export function Footer({ basePath = '' }: Props) {
+export function Footer() {
   const year = new Date().getFullYear();
 
   return (
@@ -31,10 +31,10 @@ export function Footer({ basePath = '' }: Props) {
             <h2 className="font-mono text-xs uppercase tracking-eyebrow text-zinc-500">Explore</h2>
             <ul className="mt-4 space-y-3 text-sm">
               {nav.map((item) => (
-                <li key={item.href}>
-                  <a href={`${basePath}${item.href}`} className="transition-colors hover:text-white">
+                <li key={item.label}>
+                  <Link to={navTarget(item)} className="transition-colors hover:text-white">
                     {item.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>

@@ -4,7 +4,7 @@ import { capabilityAreas } from '../../data/capabilities';
 export function Capabilities() {
   return (
     <Section
-      id="capabilities"
+      id="services"
       tone="mist"
       eyebrow="Broader Capabilities"
       title="AI-DLC is the wedge. These are the rest of the practice."
