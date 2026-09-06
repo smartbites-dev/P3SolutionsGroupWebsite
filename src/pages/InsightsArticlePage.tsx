@@ -15,6 +15,18 @@ function formatDate(iso: string): string {
 }
 
 /**
+ * Article body is plain data (see `../data/insights.ts`), not markdown — the
+ * only inline syntax it carries is `**emphasis**`, rendered as <strong>.
+ * Anything more (links, lists) should stay out of body copy rather than
+ * growing this into a markdown parser.
+ */
+function renderEmphasis(paragraph: string) {
+  return paragraph.split(/\*\*(.+?)\*\*/g).map((chunk, i) =>
+    i % 2 === 1 ? <strong key={i}>{chunk}</strong> : chunk
+  );
+}
+
+/**
  * /insights/:slug — same component drives local dev, the production client
  * bundle, and the build-time prerender (see entry-static.tsx). Only
  * published articles resolve; anything else (unknown slug, or a planned
@@ -57,9 +69,12 @@ export function InsightsArticlePage() {
             <h1 className="mt-3 text-3xl font-bold tracking-tight text-p3-ink sm:text-4xl">
               {article.title}
             </h1>
+            {article.author && (
+              <p className="mt-3 text-sm font-semibold text-zinc-600">{article.author}</p>
+            )}
             <div className="mt-8 space-y-5 text-base leading-relaxed text-zinc-700">
               {article.body.map((paragraph, i) => (
-                <p key={i}>{paragraph}</p>
+                <p key={i}>{renderEmphasis(paragraph)}</p>
               ))}
             </div>
           </article>

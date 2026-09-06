@@ -14,6 +14,8 @@ export type InsightArticleData = {
   title: string;
   description: string;
   date: string;
+  /** Byline, e.g. "Joe Davault, Founder". Omitted on `planned` entries. */
+  author?: string;
   body: string[];
   status: 'published' | 'planned';
 };
