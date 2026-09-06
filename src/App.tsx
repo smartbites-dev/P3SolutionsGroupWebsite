@@ -1,41 +1,23 @@
-import { Header } from './components/layout/Header';
-import { Footer } from './components/layout/Footer';
-import { Hero } from './components/sections/Hero';
-import { AiDlc } from './components/sections/AiDlc';
-import { MaturityModel } from './components/sections/MaturityModel';
-import { Measurement } from './components/sections/Measurement';
-import { Capabilities } from './components/sections/Capabilities';
-import { BuiltInsideP3 } from './components/sections/BuiltInsideP3';
-import { Ventures } from './components/sections/Ventures';
-import { About } from './components/sections/About';
-import { Contact } from './components/sections/Contact';
+import { Routes, Route } from 'react-router-dom';
+import { HomePage } from './pages/HomePage';
+import { InsightsLandingPage } from './pages/InsightsLandingPage';
+import { InsightsArticlePage } from './pages/InsightsArticlePage';
+import { NotFound } from './pages/NotFound';
 
+/**
+ * The single route table — used identically by local dev, the production
+ * client bundle (main.tsx, wrapped in BrowserRouter), and the build-time
+ * prerender path (entry-static.tsx, wrapped in StaticRouter). One component
+ * per route; never a separate dev-only or build-only page implementation.
+ */
 function App() {
   return (
-    <div className="min-h-screen bg-white">
-      <a
-        href="#main"
-        className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-p3-red focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-white"
-      >
-        Skip to content
-      </a>
-
-      <Header />
-
-      <main id="main">
-        <Hero />
-        <AiDlc />
-        <MaturityModel />
-        <Measurement />
-        <Capabilities />
-        <BuiltInsideP3 />
-        <Ventures />
-        <About />
-        <Contact />
-      </main>
-
-      <Footer />
-    </div>
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/insights" element={<InsightsLandingPage />} />
+      <Route path="/insights/:slug" element={<InsightsArticlePage />} />
+      <Route path="*" element={<NotFound />} />
+    </Routes>
   );
 }
 
