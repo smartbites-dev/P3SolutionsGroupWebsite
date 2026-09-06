@@ -1,7 +1,12 @@
 import { Container } from './Container';
 import { nav, site } from '../../data/site';
 
-export function Footer() {
+type Props = {
+  /** See `Header`'s `basePath` — same reasoning, same default. */
+  basePath?: string;
+};
+
+export function Footer({ basePath = '' }: Props) {
   const year = new Date().getFullYear();
 
   return (
@@ -27,7 +32,7 @@ export function Footer() {
             <ul className="mt-4 space-y-3 text-sm">
               {nav.map((item) => (
                 <li key={item.href}>
-                  <a href={item.href} className="transition-colors hover:text-white">
+                  <a href={`${basePath}${item.href}`} className="transition-colors hover:text-white">
                     {item.label}
                   </a>
                 </li>

@@ -1,0 +1,13 @@
+[
+  {
+    "slug": "from-story-to-release-engineering-harness",
+    "title": "From Story to Release: An Engineering Harness",
+    "description": "PLACEHOLDER — replaced under KAN-2 with the real, anonymized article. This entry exists only to prove the KAN-1 routing/prerender/sitemap mechanism end to end.",
+    "date": "2026-09-05",
+    "body": [
+      "PLACEHOLDER CONTENT — this paragraph and the ones below exist only to prove that a real article page renders, prerenders, and gets picked up by the sitemap. KAN-2 replaces this copy with the real, anonymized article.",
+      "The real article covers the shift from writing syntax to building an engineering harness, the autonomy levels from human-led to fully agentic delivery, spec-driven development as a contract between people and agents, and where human approval gates belong in that flow.",
+      "Once KAN-2 lands, this file is the only thing that needs to change — the routing, prerendering, and sitemap mechanism built in KAN-1 does not."
+    ]
+  }
+]

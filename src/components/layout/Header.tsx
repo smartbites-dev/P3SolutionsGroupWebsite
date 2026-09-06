@@ -3,7 +3,17 @@ import { Menu, X } from 'lucide-react';
 import { Container } from './Container';
 import { nav, site } from '../../data/site';
 
-export function Header() {
+type Props = {
+  /**
+   * Prefix for section-anchor links. Empty on the homepage (default — links
+   * scroll on this page). Set to `/` on a page other than the homepage (e.g.
+   * an Insights article) so nav links navigate back to the homepage section
+   * instead of scrolling within a page that doesn't have that anchor.
+   */
+  basePath?: string;
+};
+
+export function Header({ basePath = '' }: Props) {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -38,7 +48,7 @@ export function Header() {
     >
       <Container>
         <div className="flex items-center justify-between py-3">
-          <a href="#top" className="flex items-center gap-3" aria-label={`${site.name} home`}>
+          <a href={`${basePath}#top`} className="flex items-center gap-3" aria-label={`${site.name} home`}>
             <img
               src="/logo-mark.png"
               alt=""
@@ -60,14 +70,14 @@ export function Header() {
             {nav.map((item) => (
               <a
                 key={item.href}
-                href={item.href}
+                href={`${basePath}${item.href}`}
                 className="text-sm font-medium text-zinc-600 transition-colors duration-200 hover:text-p3-red"
               >
                 {item.label}
               </a>
             ))}
             <a
-              href="#contact"
+              href={`${basePath}#contact`}
               className="rounded-lg bg-p3-red px-5 py-2.5 text-sm font-semibold text-white transition-colors duration-200 hover:bg-p3-red-deep"
             >
               Work With P3
@@ -94,7 +104,7 @@ export function Header() {
               {nav.map((item) => (
                 <a
                   key={item.href}
-                  href={item.href}
+                  href={`${basePath}${item.href}`}
                   onClick={() => setOpen(false)}
                   className="border-b border-zinc-100 py-4 text-base font-medium text-zinc-700 transition-colors hover:text-p3-red"
                 >
@@ -102,7 +112,7 @@ export function Header() {
                 </a>
               ))}
               <a
-                href="#contact"
+                href={`${basePath}#contact`}
                 onClick={() => setOpen(false)}
                 className="mt-5 rounded-lg bg-p3-red px-5 py-3.5 text-center text-sm font-semibold text-white transition-colors hover:bg-p3-red-deep"
               >
