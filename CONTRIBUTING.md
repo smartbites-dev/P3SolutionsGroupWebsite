@@ -10,19 +10,22 @@ layer here yet. Add those only when a real story exposes the need.
 A lightweight GitHub-based branching model — not GitFlow, not strict GitHub Flow.
 
 ```
-feature/KAN-x  →  develop  →  main  →  production
+feature/KAN-x  →  develop  →  release/*  →  main  →  production
 ```
 
 - **`feature/KAN-x`** — one branch per Jira story (e.g. `feature/KAN-1`). Branch from `develop`.
 - **`develop`** — the long-lived integration branch. Nothing deploys from it; it exists purely
   as a deliberate integration point between `feature/*` branches and a release.
+- **`release/*`** — cut from `develop` to promote to production. Versioning, tagging, and the
+  full cut/promote/sync procedure are canonical in
+  [`docs/runbook/release-process.md`](./docs/runbook/release-process.md) — not duplicated here.
 - **`main`** — the production branch. Netlify deploys automatically on every merge to `main`,
   unchanged from how this repo has always worked. There is still no staging environment.
 
-**Policy:** a `main` pull request should originate from `develop` — that promotion is the
-deliberate release decision. This is stated as policy, not mechanically enforced in v0.1.
-Add enforcement later only if real evidence (an accidental non-`develop` merge to `main`)
-shows it's needed — don't build the check before the failure it prevents has actually happened.
+**Policy:** production promotion does **not** use a direct `develop` → `main` PR. It goes
+through a `release/*` branch — see
+[`docs/runbook/release-process.md`](./docs/runbook/release-process.md) for the full flow,
+the merge strategy per branch, and the main→develop sync step.
 
 ## Before opening a PR
 
@@ -51,8 +54,10 @@ worse signal than no template.
 - `main` and `develop` require a passing `verify` check and a pull request; direct pushes are
   rejected (branch protection, configured in GitHub repo settings — this is a standing
   repository setting, not something re-verified per PR).
-- Promotion from `develop` to `main` is its own PR and its own decision — it answers "are we
-  ready to release," which is a different question from "did this change integrate cleanly."
+- Promotion to `main` happens through a `release/*` branch, not a direct `develop` → `main`
+  PR — that promotion is its own decision, answering "are we ready to release," which is
+  different from "did this change integrate cleanly." Full procedure:
+  [`docs/runbook/release-process.md`](./docs/runbook/release-process.md).
 
 ## What CI does and doesn't check
 
