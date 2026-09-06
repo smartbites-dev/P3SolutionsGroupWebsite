@@ -14,6 +14,13 @@ feature/* → develop → release/* → main → sync/main-to-develop → develo
 
 ## Cut a Release
 
+`standard-version` reads the commit types defined in `CONTRIBUTING.md`'s PR title convention
+directly off `develop`'s history (each `feature/*` squash commit *is* one of those types, by
+construction) — `feat` drives a minor bump, `fix` a patch bump, everything else (`docs`,
+`test`, `refactor`, `perf`, `ci`, `chore`) contributes to the changelog without bumping the
+version on its own. Always run the `--dry-run` first and read the generated changelog before
+committing to a bump level — don't assume the commit history classified itself correctly.
+
 ```bash
 git checkout develop
 git pull --ff-only origin develop
@@ -104,6 +111,9 @@ Verify → Continue lifecycle → Reconcile → Cleanup → Closeout
 - request required reviewers
 - obtain required approvals
 - confirm the PR is mergeable and current against its base
+- for any `feature/*` PR (squash-merged — see Merge Policy above): confirm the PR title
+  matches the canonical convention in `CONTRIBUTING.md` before reporting readiness, since
+  that title becomes the commit message on `develop`
 - report the PR as **READY FOR MERGE**, then stop
 
 **Human responsibility: perform the physical merge.** The agent never clicks Merge — on any

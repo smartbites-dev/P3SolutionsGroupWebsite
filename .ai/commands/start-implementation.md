@@ -24,7 +24,7 @@ Create a **Draft Pull Request**:
 
 - Base: `develop`
 - Head: current `feature/*` branch
-- Use a Conventional Commit-style PR title appropriate to the change.
+- Title the PR per the canonical convention in [`CONTRIBUTING.md`](../../CONTRIBUTING.md#pr-title--commit-convention) — the PR is squash-merged, so this title becomes the commit message on `develop`, not a formality.
 
 The draft PR is the execution and evidence container for the story.
 
@@ -66,6 +66,9 @@ Before marking the Draft PR Ready for Review:
 - build passes
 - applicable tests/checks pass
 - no approval-required changes were made without approval
+- the PR title matches `CONTRIBUTING.md`'s canonical convention — required before reporting
+  READY FOR MERGE, not optional polish, since squash merge makes this title the commit
+  message that lands on `develop`
 
 Update the PR with relevant implementation and verification evidence.
 
