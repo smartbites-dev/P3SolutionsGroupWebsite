@@ -4,7 +4,7 @@ import { MaturityLadder } from '../diagrams/MaturityLadder';
 export function MaturityModel() {
   return (
     <Section
-      id="maturity"
+      id="methodology"
       tone="charcoal"
       eyebrow="The AI-DLC Maturity Model"
       title="AI participation is a maturity curve, not a switch"
